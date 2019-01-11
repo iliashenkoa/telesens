@@ -61,7 +61,9 @@ public abstract class SquareMatrix {
 		for (int i = 0; i < this.getRowCount(); i++) {
 			for (int j = 0; j < this.getColumnCount(); j++) {
 				minor = determinant(new SubMatrix(this, i, j));
-				resMatrix.setValueAt(j, i, (1 / determ) * Math.pow(-1, (double) i + j) * minor);
+				if (determ != 0) {
+					resMatrix.setValueAt(j, i, (1 / determ) * Math.pow(-1, (double) i + j) * minor);
+				}
 			}
 		}
 		return resMatrix;
