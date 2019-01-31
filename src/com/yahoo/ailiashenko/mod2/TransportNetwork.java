@@ -81,7 +81,7 @@ public class TransportNetwork<T> {
 		int[][] adjMatrix = this.getAdjMatrix();
 		int start = listOfAllNodes().indexOf(node1);
 		int end = listOfAllNodes().indexOf(node2);
-		Dijkstra<T> d = new Dijkstra(listOfAllNodes().size(), adjMatrix);
+		Dijkstra<T> d = new Dijkstra<>(listOfAllNodes().size(), adjMatrix);
 		return d.dijkstraGetMinDistances(start, end, listOfAllNodes());
 	}
 

@@ -1,6 +1,9 @@
 package com.yahoo.ailiashenko.mod1;
 
+import java.util.Random;
+
 public abstract class SquareMatrix {
+
 	public abstract double getValueAt(int row, int column);
 
 	public abstract int getRowCount();
@@ -67,6 +70,19 @@ public abstract class SquareMatrix {
 			}
 		}
 		return resMatrix;
+	}
+
+	public SquareMatrix insertRandom() {
+		int min = 10;
+		int max = 150;
+		Random r = new Random();
+		for (int i = 0; i < this.getRowCount(); i++) {
+			for (int j = 0; j < this.getColumnCount(); j++) {
+				double x = r.nextInt((max - min) + 1);
+				this.setValueAt(i, j, x);
+			}
+		}
+		return this;
 	}
 
 	@Override

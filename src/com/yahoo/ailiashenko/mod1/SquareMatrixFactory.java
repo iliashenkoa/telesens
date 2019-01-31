@@ -1,6 +1,9 @@
 package com.yahoo.ailiashenko.mod1;
 
 public class SquareMatrixFactory {
+	private SquareMatrixFactory() {
+	}
+
 	public static SquareMatrix getMatrix(String type, int rowI, int columnI) {
 		if ("storage1d".equalsIgnoreCase(type))
 			return new Storage1D(rowI, columnI);

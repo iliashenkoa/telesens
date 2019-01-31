@@ -7,14 +7,15 @@ public class Demo {
 		SquareMatrix b = SquareMatrixFactory.getMatrix("Storage1D", 4, 4);
 		SquareMatrix c = SquareMatrixFactory.getMatrix("Storage2D", 4, 4);
 
+		a.insertRandom();
+		b.insertRandom();
+
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				a.setValueAt(i, j, 1);
-				b.setValueAt(i, j, 22);
 				c.setValueAt(i, j, 8);
 			}
 		}
-		
+
 		c.setValueAt(0, 0, 3);
 		c.setValueAt(0, 1, 5);
 		c.setValueAt(1, 0, 6);
